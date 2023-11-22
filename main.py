@@ -1,4 +1,21 @@
 import os
+import random
+
+
+def generate(numbers_list=[], counter=38):
+    if 0 < counter:
+        number = random.randint(0, BOARD_HEIGHT-1)
+        number2 = random.randint(0, BOARD_HEIGHT-1)
+
+        if [number, number2] in numbers_list:
+            generate(numbers_list, counter-1)
+
+        else:
+            numbers_list.append([number, number2])
+
+        generate(numbers_list, counter-1)
+
+    return numbers_list
 
 
 BOARD_WIDTH = 15
@@ -6,7 +23,7 @@ BOARD_HEIGHT = 15
 
 
 class Empty:
-    empty = '.'
+    empty = '·'
 
 
 class BaseFigure:
@@ -127,35 +144,36 @@ class Board:
 
 
 board = Board()
-my_hero = Hero(0, 0)
-point_hero1 = Point(7, 7)
-point_hero2 = Point(5, 1)
-point_hero3 = Point(8, 9)
-point_hero4 = Point(11, 1)
-point_hero5 = Point(12, 12)
-point_hero6 = Point(14, 7)
-point_hero7 = Point(14, 8)
-point_hero8 = Point(14, 9)
-point_hero9 = Point(14, 10)
-point_hero10 = Point(9, 7)
-obstacle1 = Obstacle(3, 4)
-obstacle2 = Obstacle(2, 4)
-obstacle3 = Obstacle(1, 4)
-obstacle4 = Obstacle(0, 7)
-obstacle5 = Obstacle(6, 3)
-obstacle6 = Obstacle(5, 6)
-obstacle7 = Obstacle(2, 5)
-obstacle8 = Obstacle(5, 7)
-obstacle9 = Obstacle(5, 2)
-obstacle10 = Obstacle(10, 4)
-obstacle11 = Obstacle(14, 4)
-obstacle12 = Obstacle(12, 8)
-obstacle13 = Obstacle(0, 1)
-obstacle14 = Obstacle(6, 3)
-obstacle15 = Obstacle(7, 2)
-obstacle16 = Obstacle(8, 4)
-obstacle17 = Obstacle(9, 9)
-obstacle18 = Obstacle(3, 5)
+x = generate()
+my_hero = Hero(x[0][0], x[0][1])
+point_hero1 = Point(x[1][0], x[1][1])
+point_hero2 = Point(x[2][0], x[2][1])
+point_hero3 = Point(x[3][0], x[3][1])
+point_hero4 = Point(x[4][0], x[4][1])
+point_hero5 = Point(x[5][0], x[5][1])
+point_hero6 = Point(x[6][0], x[6][1])
+point_hero7 = Point(x[7][0], x[7][1])
+point_hero8 = Point(x[8][0], x[8][1])
+point_hero9 = Point(x[9][0], x[9][1])
+point_hero10 = Point(x[10][0], x[10][1])
+obstacle1 = Obstacle(x[11][0], x[11][1])
+obstacle2 = Obstacle(x[12][0], x[12][1])
+obstacle3 = Obstacle(x[13][0], x[13][1])
+obstacle4 = Obstacle(x[14][0], x[14][1])
+obstacle5 = Obstacle(x[15][0], x[15][1])
+obstacle6 = Obstacle(x[16][0], x[16][1])
+obstacle7 = Obstacle(x[17][0], x[17][1])
+obstacle8 = Obstacle(x[18][0], x[18][1])
+obstacle9 = Obstacle(x[19][0], x[19][1])
+obstacle10 = Obstacle(x[20][0], x[20][1])
+obstacle11 = Obstacle(x[21][0], x[21][1])
+obstacle12 = Obstacle(x[22][0], x[22][1])
+obstacle13 = Obstacle(x[23][0], x[23][1])
+obstacle14 = Obstacle(x[24][0], x[24][1])
+obstacle15 = Obstacle(x[25][0], x[25][1])
+obstacle16 = Obstacle(x[26][0], x[26][1])
+obstacle17 = Obstacle(x[27][0], x[27][1])
+obstacle18 = Obstacle(x[28][0], x[28][1])
 
 board.put_figure(my_hero)
 board.put_figure(point_hero1)
