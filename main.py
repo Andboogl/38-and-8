@@ -2,7 +2,7 @@ import os
 import random
 
 
-def generate(numbers_list=[], counter=28):
+def generate(numbers_list=[], counter=29):
     if 0 < counter:
         number = random.randint(0, BOARD_HEIGHT-1)
         number2 = random.randint(0, BOARD_HEIGHT-1)
