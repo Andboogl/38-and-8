@@ -222,9 +222,6 @@ while True:
         elif move == 'd':
             board.move(my_hero, [my_hero.x, my_hero.y + 1])
 
-        else:
-            print('Uknown command')
-
     except ValueError:
         pass
 
